@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/52f08088b2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <button style="width: auto; background-color: white; box-shadow: 0px 0px 3px 0px gray; font-size: small; height: auto; cursor: pointer; float: right; font-weight: bolder; margin: 10px; padding: 15px;" onclick="showHistory()">Show Calulation History</button>
+    
+    <div id="move">
+        <i id="close" onclick="showHistory()" class="fa fa-window-close" aria-hidden="true"></i>
+        <br>
+        <p>History</p>
+        <button style="margin-top: 25px;" onclick="clearHistory()">Clear</button>
+        <table border="2" id="content" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; width: 100%;">
+                <tr>
+                    <th>Expression</th>
+                    <th>Result</th>
+                </tr>
+        </table>
+    </div>
+
+    <table id="cal" border="2 ">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="data" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td><button onclick="num('<')"><i class="fas fa-backspace"></i></button>
+            </td> <td><button onclick="num('c')" style="font-weight: bold;">C</button></td>
+            <td><button onclick="num('/')"><i class="fas fa-divide"></i></button></td>
+            <td><button onclick="num('*')"><i class="fas fa-times"></i></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="num(7)">7</button></td>
+            <td><button onclick="num(8)">8</button></td>
+            <td><button onclick="num(9)">9</button></td>
+            <td><button onclick="num('-')"><i class="fas fa-minus"></i></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="num(4)">4</button></td>
+            <td><button onclick="num(5)">5</button></td>
+            <td><button onclick="num(6)">6</button></td>
+            <td><button onclick="num('+')"><i class="fas fa-plus"></i></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="num(1)">1</button></td>
+            <td><button onclick="num(2)">2</button></td>
+            <td><button onclick="num(3)">3</button></td>
+            <td rowspan="2"><button onclick="res()" style="height: 130px;"><i class="fas fa-equals"></i></button></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><button onclick="num(0)" style="width: 150px;">0</button></td>
+            <td><button onclick="num('.')"><b>.</b></button></td>
+        </tr>
+    </table>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
